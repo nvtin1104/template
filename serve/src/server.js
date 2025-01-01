@@ -21,13 +21,13 @@ const START_SERVER = () => {
     console.log(`Server is running at http://${env.APP_HOST}:${env.APP_PORT}/`);
   });
 };
-(async () => {
-  try {
-    await CONNECT_DB();
-    console.log('Connect to MongoDB Atlas successfully');
-    START_SERVER();
-  } catch (error) {
-    console.log(error);
-    process.exit(0);
-  }
-})();
+// (async () => {
+//   try {
+//     await CONNECT_DB();
+//     console.log('Connect to MongoDB Atlas successfully');
+//     START_SERVER();
+//   } catch (error) {
+//     console.log(error);
+//     process.exit(0);
+//   }
+// })();
