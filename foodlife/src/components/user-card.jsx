@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Box, Text } from "zmp-ui";
 import { useRecoilValue } from "recoil";
-import { userState } from "../state";
+import { userState } from "../state/state";
 
 const UserCard = () => {
   const { userInfo } = useRecoilValue(userState);

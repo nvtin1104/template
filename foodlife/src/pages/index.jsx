@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import { List, Page, Icon, useNavigate } from "zmp-ui";
 import UserCard from "../components/user-card";
+import { getUserID } from "zmp-sdk";
 
 const HomePage = () => {
   const navigate = useNavigate();
+
   return (
     <Page className="page">
       <Suspense>

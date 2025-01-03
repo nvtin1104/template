@@ -17,6 +17,6 @@ Router.route('/test').get((req, res) => {
 })
 
 // Sử dụng router cho user
-Router.use('/user', userRouter)
+Router.use('/users', userRouter)
 
 export const APIs = Router

@@ -11,22 +11,11 @@ import {
 } from "zmp-ui";
 import { getUserID } from "zmp-sdk/apis";
 import { useRecoilValue } from "recoil";
-import { displayNameState, userState } from "../state";
+import { displayNameState, userState } from "../state/state";
 
 const UserPage = () => {
   const { userInfo: user } = useRecoilValue(userState);
   const displayName = useRecoilValue(displayNameState);
-  getUserID({
-    success: (data) => {
-      // xử lý khi gọi api thành công
-      const userID = data;
-      console.log(userID);
-    },
-    fail: (error) => {
-      // xử lý khi gọi api thất bại
-      console.log(error);
-    },
-  });
   const navigate = useNavigate();
   return (
     <Page className="page">
