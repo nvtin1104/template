@@ -1,26 +1,48 @@
-import { MongoClient, ServerApiVersion } from 'mongodb'
+import mongoose from 'mongoose'
 import { env } from '~/config/environment'
 
-let dbInstance = null
-
-// Khởi tạo một đối tượng client để connect tới mongoDB
-const client = new MongoClient(env.MONGODB_URI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true
-  }
-})
-// Kết nối tới database
+let isConnected = false
+// Kết nối tới MongoDB
 export const CONNECT_DB = async () => {
-  await client.connect()
-  dbInstance = client.db(env.DATABASE_NAME)
-}
-export const GET_DB = () => {
-  if (!dbInstance) throw new Error('Must connect to Database first')
-  return dbInstance
+  if (isConnected) {
+    console.log('Already connected to the database.')
+    return
+  }
+
+  try {
+    const connection = await mongoose.connect(env.MONGODB_URI, {
+      dbName: env.DATABASE_NAME,
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
+
+    isConnected = true
+    console.log(`Connected to database: ${env.DATABASE_NAME}`)
+    return connection
+  } catch (error) {
+    console.error('Failed to connect to MongoDB:', error)
+    throw new Error('Database connection failed')
+  }
 }
 
+// Đóng kết nối tới MongoDB
 export const CLOSE_DB = async () => {
-  await client.close()
+  if (!isConnected) {
+    console.log('No active database connection to close.')
+    return
+  }
+
+  try {
+    await mongoose.disconnect()
+    isConnected = false
+    console.log('Database connection closed.')
+  } catch (error) {
+    console.error('Failed to close the database connection:', error)
+    throw new Error('Error closing database connection')
+  }
+}
+
+// Kiểm tra trạng thái kết nối
+export const GET_CONNECTION_STATUS = () => {
+  return isConnected
 }
