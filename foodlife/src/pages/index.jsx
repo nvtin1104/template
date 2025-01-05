@@ -1,19 +1,27 @@
 import React, { Suspense } from "react";
 import { List, Page, Icon, useNavigate } from "zmp-ui";
-import UserCard from "../components/user-card";
-import { getUserID } from "zmp-sdk";
+import { getUserID, setNavigationBarColor, showToast } from "zmp-sdk";
+import bannerImage from '../assets/images/index-banner.webp';
+
 
 const HomePage = () => {
   const navigate = useNavigate();
-
+  setNavigationBarColor({
+    color: null,
+    success: (res) => {
+      // xử lý khi gọi api thành công
+    },
+    fail: (error) => {
+      // xử lý khi gọi api thất bại
+      console.log(error);
+    }
+  });
   return (
-    <Page className="page">
+    <Page >
       <Suspense>
-        <div className="section-container">
-          <UserCard />
-        </div>
+    <img src={bannerImage} alt="logo" className="img-fluid"/>
       </Suspense>
-      <div className="section-container">
+      <div className="page section-container">
         <List>
           <List.Item
             onClick={() => navigate("/about")}

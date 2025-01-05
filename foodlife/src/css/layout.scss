@@ -1,0 +1,68 @@
+@use 'variables' as v; 
+.section-container {
+    padding: v.$padding;
+    background: #ffffff;
+    border-radius: v.$border-radius;
+    margin-bottom: 24px;
+}
+
+.navigation-container {
+    padding: v.$padding;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .navigation-main {
+        display: flex;
+        justify-content: space-between;
+        background-color: #ffffff;
+        border-radius: v.$border-radius;
+
+        .navigation-icon {
+            padding: 12px 16px;
+            .active {
+                color: v.$main-color;
+            }
+        }
+
+        .navigation-center {
+            padding: 0;
+            flex-grow: 1;
+
+            .navigation-center-container {
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                .navigation-center-bg {
+                    height: 100%;
+                    background-color: v.$main-bg;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10px;
+                    transform: translateX(-50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    .navigation-center-icon {
+                        height: 80px;
+                        width: 80px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: v.$main-color;
+                        color: v.$text-color;
+                        border-radius: 50%;
+                        z-index: 10;
+                    }
+                }
+            }
+        }
+
+    }
+}

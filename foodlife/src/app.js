@@ -9,7 +9,10 @@ import "./css/tailwind.scss";
 import "zmp-ui/zaui.css";
 
 // Your stylesheet
+import "./css/variables.scss";
 import "./css/app.scss";
+import "./css/layout.scss";
+import "./css/global.scss";
 
 // Expose app configuration
 import appConfig from "../app-config.json";

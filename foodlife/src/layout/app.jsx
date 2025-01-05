@@ -4,9 +4,11 @@ import { App, ZMPRouter, AnimationRoutes, SnackbarProvider, useTheme } from 'zmp
 import { RecoilRoot } from 'recoil';
 import HomePage from '../pages';
 import About from '../pages/about';
-import Form from '../pages/form';
-import User from '../pages/user';
+import Cart from '../pages/cart';
 import NavigationMenu from './navigation';
+import GamePage from '../pages/game';
+import AccountPage from '../pages/account';
+import NotificationPage from '../pages/notification';
 
 const MyApp = () => 
 {
@@ -20,9 +22,10 @@ const MyApp = () =>
             <AnimationRoutes>
               <Route path="/" element={<HomePage></HomePage>}></Route>
               <Route path="/about" element={<About></About>}></Route>
-              <Route path="/form" element={<Form></Form>}></Route>
-              <Route path="/user" element={<User></User>}></Route>
-
+              <Route path="/game" element={<GamePage></GamePage>}></Route>
+              <Route path="/notification" element={<NotificationPage></NotificationPage>}></Route>
+              <Route path="/cart" element={<Cart></Cart>}></Route>
+              <Route path="/account" element={<AccountPage></AccountPage>}></Route>
             </AnimationRoutes>
         <NavigationMenu/>
           </ZMPRouter>
