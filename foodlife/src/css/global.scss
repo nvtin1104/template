@@ -1,3 +1,4 @@
+@use 'variables' as v; 
 .d-flex {
     display: flex;
 }
@@ -299,6 +300,10 @@
 
 .rounded-0 {
     border-radius: 0 !important;
+}
+.rounded-bottom {
+    border-bottom-left-radius: v.$border-radius !important;
+    border-bottom-right-radius: v.$border-radius !important;
 }
 // img 
 .img-fluid {

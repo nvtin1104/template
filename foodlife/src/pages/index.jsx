@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { List, Page, Icon, useNavigate } from "zmp-ui";
+import { List, Page, Icon, useNavigate, Box } from "zmp-ui";
 import { getUserID, setNavigationBarColor, showToast } from "zmp-sdk";
 import bannerImage from '../assets/images/index-banner.webp';
 
@@ -19,7 +19,16 @@ const HomePage = () => {
   return (
     <Page >
       <Suspense>
-    <img src={bannerImage} alt="logo" className="img-fluid"/>
+        <Box className='banner-index'>
+          <div className="banner-index-content">
+            <div> 
+              
+            </div>
+            <div className="banner-title">Welcome to ZMP-UI</div>
+            <div className="banner-subtitle">A React UI library for ZMP</div>
+          </div>
+          <img src={bannerImage} alt="banner" className="img-fluid rounded-bottom" />
+        </Box>
       </Suspense>
       <div className="page section-container">
         <List>

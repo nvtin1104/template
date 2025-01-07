@@ -1,7 +1,6 @@
 @use 'variables' as v; 
-.page {
-  background-color: v.$main-bg;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.banner-index {
+  border-bottom-right-radius: v.$border-radius;
+  border-bottom-left-radius: v.$border-radius;
+  padding-bottom: 12px;
 }

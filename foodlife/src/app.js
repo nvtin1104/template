@@ -8,8 +8,8 @@ import "./css/tailwind.scss";
 // ZaUI stylesheet
 import "zmp-ui/zaui.css";
 
-// Your stylesheet
 import "./css/variables.scss";
+import "./css/pages/index.scss";
 import "./css/app.scss";
 import "./css/layout.scss";
 import "./css/global.scss";
