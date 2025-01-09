@@ -1,10 +1,15 @@
 @use '../variables' as v;
 
 .banner-index {
-    border-bottom-right-radius: v.$border-radius;
-    border-bottom-left-radius: v.$border-radius;
     position: relative;
     padding-bottom: 12px;
+    .banner-index-icon {
+        position: absolute;
+        padding: 12px;
+        display: flex;
+        top: 0;
+        right: 0;
+    }
 }
 .banner-index-content {
     position: absolute;
