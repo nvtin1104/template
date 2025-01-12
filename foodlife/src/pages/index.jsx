@@ -32,6 +32,11 @@ const HomePage = () => {
           </div> */}
           <img src={bannerIndex} alt="banner" className="img-fluid" />
         </Box>
+        <div className=" bg-blue-500 text-white p-4 flex items-center justify-center">
+  {/* Nội dung của Box */}tesst class taiwind
+  <p>ss</p>
+</div>
+
       </Suspense>
 
     </Page>

@@ -15,7 +15,7 @@ const MyApp = () =>
   return   (
   
     <RecoilRoot>
-      <App > 
+      <App className='dark'> 
         <SnackbarProvider>
        
           <ZMPRouter>
